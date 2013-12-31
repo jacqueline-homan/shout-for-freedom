@@ -11,6 +11,7 @@ group :development, :test do
   gem 'binding_of_caller'
 end
 gem 'omniauth-twitter'
+gem 'rails_12factor'
 
 # Use postgresql as the database for Active Record
 group :production do
