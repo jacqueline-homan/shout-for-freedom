@@ -33,13 +33,16 @@
       <section class="top-bar-section">
         <!-- Right Nav Section -->
         <ul class="right">
-          <li class="active"><a href="#">Right Nav Button Active</a></li>
-          <li class="has-dropdown">
-            <a href="#">Right Button with Dropdown</a>
-            <ul class="dropdown">
-              <li><a href="#">First link in dropdown</a></li>
-            </ul>
-          </li>
+          <% if current_user %>
+            <li class="active">
+              <a href="#">Signed in as <%= current_user.name %>!</a>
+            </li>
+            <li class="active"><%= link_to "Sign out", signout_path %></li>
+          <% else %>
+            <li class="active">
+              <%= link_to "Sign in with Twitter", "/auth/twitter" %>
+            </li>
+          <% end %>
         </ul>
 
         <!-- Left Nav Section -->
