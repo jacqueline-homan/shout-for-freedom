@@ -1,6 +1,6 @@
 Sff::Application.routes.draw do
-  root to: "pages#home"
-  get  '/home' => 'pages#home'
+  root to: "pages#home", via: :get
+  #get  '/home' => 'pages#home'
   get '/about' => 'pages#about'
   get '/contact' => 'pages#contact'
   get 'auth/twitter/callback', to: 'sessions#create'
